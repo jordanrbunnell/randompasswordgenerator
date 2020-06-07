@@ -33,7 +33,7 @@ var lowercase = "abcdefghijklmnopqrstuvwxyz",
       passwordCharSet += numbers;
     }
 
-    plength = Number(10);
+    plength = Number(lengthInput.value);
     for (let i = 0; i < plength; i++) {
       userPassword += passwordCharSet.charAt(
         Math.floor(Math.random() * passwordCharSet.length)
@@ -47,9 +47,9 @@ var lowercase = "abcdefghijklmnopqrstuvwxyz",
         alertbox.classList.remove('fail');
       }, 3000);
     } 
-    if (userPassword == "") {
+    if (plength > 128 || plength < 1) {
       let alertbox = document.getElementById('alert');
-      alertbox.innerHTML = "Please select an option before generating"
+      alertbox.innerHTML = "Password must be between 8 and 128 characters"
       alertbox.classList.add('fail');
       setTimeout(function(){ 
         alertbox.classList.remove('fail');
