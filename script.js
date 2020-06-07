@@ -40,17 +40,21 @@ var lowercase = "abcdefghijklmnopqrstuvwxyz",
         Math.floor(Math.random() * passwordCharSet.length)
       );
     }
-    if (userPassword == "") {
-      
-      alertbox.innerHTML = "Please Select Character Type Before Generating"
-     
-     
-    } 
+    console.log(plength)
+    console.log(userPassword)
+
+    
     if (plength > 128 || plength < 1) {
       alertbox.innerHTML = "Password must be between 8 and 128 characters"
       
     } 
-    
+    else if (userPassword == "") {
+      
+      // alert ("Please Select Character Type Before Generating");
+      alertbox.innerHTML = "Please Choose a Character Type"
+
+     
+    } 
     else {
       alertbox.innerHTML = ""
       
