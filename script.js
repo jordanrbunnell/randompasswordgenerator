@@ -13,6 +13,7 @@ var lowercase = "abcdefghijklmnopqrstuvwxyz",
   passwordFeild = document.getElementById("password"),
   generateButton = document.getElementById("generate"),
   copyButton = document.getElementById("copy"),
+  alertbox = document.getElementById('alert'),
   plength,
   userPassword,
   passwordCharSet;
@@ -40,23 +41,20 @@ var lowercase = "abcdefghijklmnopqrstuvwxyz",
       );
     }
     if (userPassword == "") {
-      let alertbox = document.getElementById('alert');
-      alertbox.innerHTML = "Please select an option before generating"
-      alertbox.classList.add('fail');
-      setTimeout(function(){ 
-        alertbox.classList.remove('fail');
-      }, 3000);
+      
+      alertbox.innerHTML = "Please Select Character Type Before Generating"
+     
+     
     } 
     if (plength > 128 || plength < 1) {
-      let alertbox = document.getElementById('alert');
       alertbox.innerHTML = "Password must be between 8 and 128 characters"
-      alertbox.classList.add('fail');
-      setTimeout(function(){ 
-        alertbox.classList.remove('fail');
-      }, 3000);
+      
     } 
     
     else {
+      alertbox.innerHTML = ""
+      
+
       passwordFeild.innerHTML = userPassword;
     }
     
@@ -67,12 +65,12 @@ var lowercase = "abcdefghijklmnopqrstuvwxyz",
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  var password = userpassword("");
+  var passwordText = document.querySelector("#generate");
 
   passwordText.value = password;
 
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("generate", writePassword);
