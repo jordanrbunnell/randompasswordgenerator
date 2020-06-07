@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+  
     <div class="wrapper">
       <header>
         <h1>Password Generator</h1>
@@ -25,8 +26,9 @@
             aria-label="Generated Password"
           ></textarea>
           <div class="control">
-            <input type="textbox" id="length">
-            <label class="check-label" for="lowercase"><span class="checkbox">How Many Characters? (Between 8 and 128 characters)</span></label>
+            <input type="textbox" id="length"> 
+
+            <span class="checkbox">How Many Characters? (Between 8 and 128 characters)</span></label>
           </div>
           <div class="control">
             <input type="checkbox" id="lowercase">
@@ -42,7 +44,11 @@
           </div>
           <div class="control">
             <input type="checkbox" id="punctuation">
-            <label class="check-label" for="punctuation"><span class="checkbox">Use special characters</span></label>
+            <label class="check-label" for="punctuation"><span class="checkbox">Use Special Characters</span></label>
+          </div>
+          <div class="control">
+            <input type="checkbox" id="wild">
+            <label class="check-label" for="wild"><span class="checkbox">Use Insane Characters</span></label>
           </div>
         </div>
         <div class="card-footer">
