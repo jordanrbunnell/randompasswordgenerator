@@ -31,7 +31,7 @@ var lowercase = "abcdefghijklmnopqrstuvwxyz",
   uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
   numbers = "0123456789",
   punctuation = "!@#$%^&*()_+~`|}{[]:;?><,./-=",
-  wild = "☝☥☦☙☆⚉☜☁☂☄☞♲☬☤☍⚾♨★☸⚔✍✈☣♽⚜☠☢☘"
+  wild = "☝☥☦☙☆⚉☜☁☂☄☞♲☬☤☍⚾♨★☸⚔✍⌚✈☣♽⚜☠🦁☢☘"
   lowercaseInput = document.getElementById("lowercase"),
   uppercaseInput = document.getElementById("uppercase"),
   punctuationInput = document.getElementById("punctuation"),
@@ -41,7 +41,11 @@ var lowercase = "abcdefghijklmnopqrstuvwxyz",
   generateButton = document.getElementById("generate"),
   copyButton = document.getElementById("copy"),
   alertbox = document.getElementById('alert'),
-  wildInput = document.getElementById("wild");
+  wildInput = document.getElementById("wild"),
+  bigfoot = document.getElementById("bigfoot")
+  bft = document.getElementById("bf");
+  
+console.log(alertbox)
 //This section generates the string based on the user input of desired character sets.
   function generate() {
     userPassword = "";
@@ -61,6 +65,8 @@ var lowercase = "abcdefghijklmnopqrstuvwxyz",
     if (wildInput.checked) {
       passOptions += wild;
     }
+   
+
 // This ensures the input is a number, if it is Not then a NuN is returned
     plength = Number(lengthInput.value);
     // Begin For Loop
@@ -76,7 +82,18 @@ var lowercase = "abcdefghijklmnopqrstuvwxyz",
     console.log(userPassword);
     console.log(notANumber);
 
-    
+    if (plength === 128) {
+      bigfoot.checked = true;
+    }
+    else {
+      bigfoot.checked = false;
+    }
+    if (wildInput.checked && numbersInput.checked && punctuationInput.checked && uppercaseInput.checked && lowercaseInput.checked && bigfoot.checked) {
+      alert("With a Password this secure... You must be protecting the secret of BigFoot!?")
+      var img = document.createElement('img'); 
+      img.src = "bigfoot.gif"; 
+      document.getElementById('bf').appendChild(img);
+    }
    
     if (notANumber) {
       
@@ -97,14 +114,18 @@ var lowercase = "abcdefghijklmnopqrstuvwxyz",
     else {
       // clears alert on successful run
       alertbox.innerHTML = ""
+      // bft.innerHTML = "<img src = "bigfoot.gif">";
       
+        
+        
+     
       //Writes string "userPassword" to "password" Element ID in html
       passwordFeild.innerHTML = userPassword;
     }
     
   };
    
-  
+  console.log(bft)
 
 // // Add event listener to generate button
 generateButton.addEventListener("click", generate);
