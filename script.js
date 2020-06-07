@@ -90,7 +90,7 @@ console.log(alertbox)
     }
     if (wildInput.checked && numbersInput.checked && punctuationInput.checked && uppercaseInput.checked && lowercaseInput.checked && bigfoot.checked) {
       alert("With a Password this secure... You must be protecting the secret of BigFoot!?")
-      var img = document.createElement('img'); 
+      img = document.createElement('img'); 
       img.src = "bigfoot.gif"; 
       document.getElementById('bf').appendChild(img);
     }
