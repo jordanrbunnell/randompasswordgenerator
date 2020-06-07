@@ -14,6 +14,7 @@ var lowercase = "abcdefghijklmnopqrstuvwxyz",
   generateButton = document.getElementById("generate"),
   copyButton = document.getElementById("copy"),
   alertbox = document.getElementById('alert');
+  
 
   function generate() {
     userPassword = "";
@@ -38,23 +39,36 @@ var lowercase = "abcdefghijklmnopqrstuvwxyz",
         Math.floor(Math.random() * passOptions.length)
       );
     }
+    notANumber = isNaN(plength);
     // Log the outputs
-    console.log(passOptions)
-    console.log(plength)
-    console.log(userPassword)
+    console.log(passOptions);
+    console.log(plength);
+    console.log(userPassword);
+    console.log(notANumber);
 
     
-    if (plength > 128 || plength < 1) {
-      alertbox.innerHTML = "Password must be between 8 and 128 characters"
+    // if (plength > 128 || plength < 1) {
+    //   alertbox.innerHTML = "Password must be between 8 and 128 characters"
       
+    // } 
+    if (notANumber) {
+      
+      // alert ("Please Select Character Type Before Generating");
+      alert("You must enter a number between 8 and 128");
+
+    } 
+    else if ((plength < 8) || (plength > 128)) {
+      
+      alertbox.innerHTML = "Password must be between 8 and 128 characters"
+
     } 
     else if (userPassword == "") {
       
       // alert ("Please Select Character Type Before Generating");
       alertbox.innerHTML = "Please Choose a Character Type"
 
-     
     } 
+    
     else {
       alertbox.innerHTML = ""
       
@@ -62,7 +76,7 @@ var lowercase = "abcdefghijklmnopqrstuvwxyz",
       passwordFeild.innerHTML = userPassword;
     }
     
-  }
+  };
   generateButton.addEventListener("click", generate);
    
   
