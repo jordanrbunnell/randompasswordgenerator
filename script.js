@@ -13,33 +13,33 @@ var lowercase = "abcdefghijklmnopqrstuvwxyz",
   passwordFeild = document.getElementById("password"),
   generateButton = document.getElementById("generate"),
   copyButton = document.getElementById("copy"),
-  alertbox = document.getElementById('alert'),
-  plength,
-  userPassword,
-  passwordCharSet;
+  alertbox = document.getElementById('alert');
 
   function generate() {
     userPassword = "";
-    passwordCharSet = "";
+    passOptions = "";
     if (lowercaseInput.checked) {
-      passwordCharSet += lowercase;
+      passOptions += lowercase;
     }
     if (uppercaseInput.checked) {
-      passwordCharSet += uppercase;
+      passOptions += uppercase;
     }
     if (punctuationInput.checked) {
-      passwordCharSet += punctuation;
+      passOptions += punctuation;
     }
     if (numbersInput.checked) {
-      passwordCharSet += numbers;
+      passOptions += numbers;
     }
-
+// This ensures the input is a number, if it is Not then a NuN is returned
     plength = Number(lengthInput.value);
+    // Begin For Loop
     for (let i = 0; i < plength; i++) {
-      userPassword += passwordCharSet.charAt(
-        Math.floor(Math.random() * passwordCharSet.length)
+      userPassword += passOptions.charAt(
+        Math.floor(Math.random() * passOptions.length)
       );
     }
+    // Log the outputs
+    console.log(passOptions)
     console.log(plength)
     console.log(userPassword)
 
