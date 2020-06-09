@@ -132,46 +132,7 @@ console.log(alertbox)
 
 
 // Script credit: https://gist.github.com/madan712/6559819
-	function checkPwdStrength() {
-		var pwd = document.getElementById("password").value;
-		len = pwd.length;
-		
-		if (len == 0) {
-			scorebar.style.backgroundPosition = '0px 0px';
-			comp = "Password Strength";
-		}
-		else {
-			scr = parseInt(getPwdScore(pwd));
-    
-      if(scr >= 100) {
-				scorebar.style.backgroundPosition = '0px -30px';
-				comp = "EPIC";
-			}
-			else if(scr >= 90) {
-				scorebar.style.backgroundPosition = '0px -30px';
-				comp = "Very Strong";
-			}
-			else if(scr >= 70) {
-				scorebar.style.backgroundPosition = '0px -24px';
-				comp = "Strong";
-			}
-			else if(scr >= 50) {
-				scorebar.style.backgroundPosition = '0px -18px';
-				comp = "Good";
-			}
-			else if(scr >= 30) {
-				scorebar.style.backgroundPosition = '0px -12px';
-				comp = "Weak";
-			}
-			else if(scr >= 0) {
-				scorebar.style.backgroundPosition = '0px -6px';
-				comp = "Very Weak";
-			}
-		}
 	
-		document.getElementById('complexity').innerHTML = comp;
-		return false;
-	}
 	
 	function getPwdScore(strPassword) {
 		// Reset combination count
@@ -259,6 +220,50 @@ console.log(alertbox)
 		}
 	
 		return nCount;
+	}
+	function checkPwdStrength() {
+		var pwd = document.getElementById("password").value;
+		len = plength;
+		
+		if (len == 0) {
+			scorebar.style.backgroundPosition = '0px 0px';
+			comp = "Password Strength";
+		}
+		else {
+			scr = parseInt(getPwdScore(pwd));
+	
+			if (wildInput.checked && numbersInput.checked && punctuationInput.checked && uppercaseInput.checked && lowercaseInput.checked && bigfoot.checked) {
+				scorebar.style.backgroundPosition = '0px -30px';
+				comp = "EPIC";
+			}
+     		 else if(scr >= 100) {
+				scorebar.style.backgroundPosition = '0px -30px';
+				comp = "Feel the Power of The Dark Side";
+			}
+			else if(scr >= 90) {
+				scorebar.style.backgroundPosition = '0px -30px';
+				comp = "Very Strong";
+			}
+			else if(scr >= 70) {
+				scorebar.style.backgroundPosition = '0px -24px';
+				comp = "Strong";
+			}
+			else if(scr >= 50) {
+				scorebar.style.backgroundPosition = '0px -18px';
+				comp = "Good";
+			}
+			else if(scr >= 30) {
+				scorebar.style.backgroundPosition = '0px -12px';
+				comp = "Weak";
+			}
+			else if(scr >= 0) {
+				scorebar.style.backgroundPosition = '0px -6px';
+				comp = "Very Weak";
+			}
+		}
+	
+		document.getElementById('complexity').innerHTML = comp;
+		return false;
 	}
 
 	generateButton.addEventListener("click", generate);
