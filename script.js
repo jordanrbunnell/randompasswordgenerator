@@ -129,7 +129,6 @@ console.log(alertbox)
   console.log(bft)
 
 // // Add event listener to generate button
-generateButton.addEventListener("click", generate);
 
 
 // Script credit: https://gist.github.com/madan712/6559819
@@ -261,3 +260,5 @@ generateButton.addEventListener("click", generate);
 	
 		return nCount;
 	}
+
+	generateButton.addEventListener("click", generate);
