@@ -135,3 +135,33 @@ button[disabled] {
     font-size: 0.8rem;
   }
 }
+#pmId {
+
+}
+
+#scorebarBorder {
+  border: 1px solid #666666;
+  height: 5px;
+  position: relative;
+  width: 122px;
+}
+
+#scorebar {
+  background-image: url("pm.png");
+}
+
+#scorebar {
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  height: 5px;
+  width: 122px;
+  z-index: 0;
+}
+
+#complexity {
+  padding: 0;
+  text-align: center;
+  top: 0;
+  width: 122px;
+  z-index: 10;
+}

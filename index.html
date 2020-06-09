@@ -26,6 +26,8 @@
             placeholder="Your Secure Password"
             aria-label="Generated Password"
           ></textarea>
+          
+          
           <div class="control">
             <input type="text" id="length" value="24"> 
 
@@ -54,7 +56,16 @@
           </div>
         </div>
         <div class="card-footer">
-          <button id="generate" class="btn">Generate Password</button><br>
+          <button id="generate" class="btn" onclick="return checkPwdStrength();">Generate Password</button><br>
+          
+			<div id="pmId">
+					<div id="scorebar" ></div>
+				</div><h3 style="float: left;">Password Strength:</h3>
+				<div id="complexity" >
+          
+				</div>
+			</div>
+		</td><br>
           <div id="bf">
             <!-- <img src=""  alt=""> -->
           </div>
