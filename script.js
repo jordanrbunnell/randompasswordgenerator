@@ -44,7 +44,8 @@ var lowercase = "abcdefghijklmnopqrstuvwxyz",
   alertbox = document.getElementById('alert'),
   wildInput = document.getElementById("wild"),
   bigfoot = document.getElementById("bigfoot")
-  bft = document.getElementById("bf");
+  bft = document.getElementById("bf")
+  strength = document.getElementById('complexity');
   
 console.log(alertbox)
 //This section generates the string based on the user input of desired character sets.
@@ -120,10 +121,11 @@ console.log(alertbox)
         
         
      
-      //Writes string "userPassword" to "password" Element ID in html
+	  //Writes string "userPassword" to "password" Element ID in html
+
       passwordFeild.innerHTML = userPassword;
     }
-    
+    checkPwdStrength();
   };
    
   console.log(bft)
@@ -222,15 +224,14 @@ console.log(alertbox)
 		return nCount;
 	}
 	function checkPwdStrength() {
-		var pwd = document.getElementById("password").value;
-		len = plength;
+
 		
-		if (len == 0) {
+		if (plength == 0) {
 			scorebar.style.backgroundPosition = '0px 0px';
 			comp = "Password Strength";
 		}
 		else {
-			scr = parseInt(getPwdScore(pwd));
+			scr = parseInt(getPwdScore(userPassword));
 	
 			if (wildInput.checked && numbersInput.checked && punctuationInput.checked && uppercaseInput.checked && lowercaseInput.checked && bigfoot.checked) {
 				scorebar.style.backgroundPosition = '0px -30px';
@@ -261,8 +262,8 @@ console.log(alertbox)
 				comp = "Very Weak";
 			}
 		}
-	
-		document.getElementById('complexity').innerHTML = comp;
+		strength.innerHTML = comp;
+
 		return false;
 	}
 
