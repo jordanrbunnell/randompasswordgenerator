@@ -6,4 +6,4 @@ Here is a password generator which allows a user to set length and complexity of
 
 ## Screenshot
 
-<img src="https://jordanrbunnell.github.io/randompasswordgenerator/screenshot.png">
+<img src="screenshot.png">
